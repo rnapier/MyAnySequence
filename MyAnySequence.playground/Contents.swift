@@ -79,7 +79,7 @@ class _FunctionGenerator<Element> : AnyGenerator_<Element> {
 Here's one possible approach. The cost is a little memory (for `box`) and a little more indirection in the dispatch.
 */
 
-class MyAnyGenerator<Element> : _AnyGeneratorBase, GeneratorType, SequenceType {
+final class MyAnyGenerator<Element> : _AnyGeneratorBase, GeneratorType, SequenceType {
     private final var box: AnyGenerator_<Element>? = nil
     override init() {}
     init<G : GeneratorType where G.Element == Element>(_ base: G) {
